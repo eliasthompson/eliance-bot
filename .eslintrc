@@ -1,0 +1,27 @@
+{
+  "env": { "node": true },
+  "extends": "airbnb/base",
+  "overrides": [
+    {
+      "env": { "mocha": true, "node": true },
+      "files": [ "test/*.test.js", "test/**/*.test.js" ],
+      "rules": {
+        "func-names": 0,
+        "no-unused-expressions": 0,
+        "prefer-arrow-callback": 0,
+        "react/jsx-filename-extension": 0
+      }
+    }
+  ],
+  "rules": {
+    "arrow-body-style": "off",
+    "class-methods-use-this": "off",
+    "import/no-named-as-default": [0],
+    "import/extensions": ["error", "always"],
+    "indent": [ "error", 2, { "MemberExpression": 1, "SwitchCase": 1 }],
+    "max-len": "off",
+    "no-underscore-dangle": 0,
+    "object-curly-newline": [ "error", { "multiline": true, "minProperties": 100, "consistent": true }],
+    "prefer-arrow-callback": 0
+  }
+}

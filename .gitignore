@@ -1,0 +1,4 @@
+.env
+firebase.json
+node_modules**
+tokens.json

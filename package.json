@@ -1,0 +1,33 @@
+{
+  "name": "eliance-bot",
+  "version": "1.0.0",
+  "description": "A bot to serve The Eliance.",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development nodemon -r dotenv/config --watch ./src",
+    "debug": "cross-env NODE_ENV=development nodemon -r dotenv/config --watch ./src --trace-warnings --unhandled-rejections=strict",
+    "lint": "eslint \"./**/*.js\"",
+    "serve": "cross-env NODE_ENV=production node -r dotenv/config ./src"
+  },
+  "author": "Elias Thompson",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-datasource": "^0.7.2",
+    "apollo-server": "^2.18.2",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "obs-websocket-js": "^4.0.2",
+    "twitch": "^4.2.6",
+    "twitch-auth": "^4.2.6",
+    "twitch-chat-client": "^4.2.6",
+    "twitch-pubsub-client": "^4.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^2.0.4"
+  }
+}
