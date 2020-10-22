@@ -10,7 +10,7 @@ export default async () => {
     const initializedDataSources = await helpers.initializeDataSources(dataSources);
 
     clients.twitchBotChat.client.onMessage(async (channel, user, message, msg) => {
-      console.log(`[${new Date().toJSON()}] <user> ${message}`); // eslint-disable-line no-console
+      console.log(`[${new Date().toJSON()}] <${user}> ${message}`); // eslint-disable-line no-console
 
       if (message.startsWith(config.commandPrefix)) {
         const args = message.toLowerCase().split(' ');
