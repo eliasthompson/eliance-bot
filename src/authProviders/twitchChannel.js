@@ -5,15 +5,12 @@ import helpers from './helpers/index.js';
 export default class TwitchChannelAuthProvider {
   async initialize() {
     try {
-      const { bot, channel: { accessToken, refreshToken } = {} } = JSON.parse(await fs.readFile('./tokens.json', 'UTF-8'));
+      const { accessToken, refreshToken } = JSON.parse(await fs.readFile('./channelTokens.json', 'UTF-8'));
 
       this.auth = helpers.getTwitchAuthProvider(accessToken, refreshToken, async (tokens) => {
-        await fs.writeFile('./tokens.json', JSON.stringify({
-          bot,
-          channel: {
-            accessToken: tokens.accessToken,
-            refreshToken: tokens.refreshToken,
-          },
+        await fs.writeFile('./channelTokens.json', JSON.stringify({
+          accessToken: tokens.accessToken,
+          refreshToken: tokens.refreshToken,
         }, null, 2), 'UTF-8');
       });
 

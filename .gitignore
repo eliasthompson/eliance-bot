@@ -1,4 +1,5 @@
 .env
+botTokens.json
+channelTokens.json
 firebase.json
 node_modules**
-tokens.json

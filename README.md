@@ -20,4 +20,11 @@ Development of this app requires Node 14 and a basic knowledge of Apollo Server 
 | `TWITCH_CHAT_CHANNEL` | The Twitch channel you want to connect your bot to. |
 
 ## Token Storage
-Until I implement a database solution, Twitch API tokens are stored in a `tokens.json` file in the app root. Please follow the [Twitch OAuth Authorization Code Flow](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-authorization-code-flow) to authorize both your main channel and your bot channel and get access tokens and refresh tokens for each with the scopes you want. Add them into the `tokens.json` in the below format, and the app should take care automatically refreshing the tokens while the app is running.
+Until I implement a database solution, Twitch API tokens are stored in a JSON file per Twitch Auth Providers in the app root, `botTokens.json` and `channelTokens.json`. Please follow the [Twitch OAuth Authorization Code Flow](https://dev.twitch.tv/docs/authentication/getting-tokens-oauth#oauth-authorization-code-flow) to authorize both your main channel and your bot channel and get access tokens and refresh tokens for each with the scopes you want. Add them into their respective JSON files in the below format, and the app should take care automatically refreshing the tokens while the app is running.
+
+```JSON
+{
+  "accessToken": "abcdefghijklmnopqrstuvwxyz0123",
+  "refreshToken": "abcdefghijklmnopqrstuvwxyz01234567890abcdefghijklm"
+}
+```

@@ -14,6 +14,6 @@ import listeners from './listeners/index.js';
     await clients.twitchPubSub.initialize(clients.twitchApi.client);
     await Promise.all(Object.values(listeners).map(listener => listener()));
   } catch (error) {
-    process.exit(1);
+    // process.exit(1);
   }
 })();
